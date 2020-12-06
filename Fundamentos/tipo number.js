@@ -25,5 +25,7 @@ console.log (media.toFixed(2));
 
 //.................................//
 
+/*em JS é possível utilizar valores dentro de uma string para operações aritméticas. Os valores são convertidos para o tipo number automaticamente. Exp: */
 
+console.log ("10" / 2);
 
