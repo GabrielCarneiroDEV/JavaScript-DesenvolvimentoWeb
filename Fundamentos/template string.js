@@ -16,6 +16,6 @@ console.log(`1+1= ${1+1}`);
 
 //podem ser utilizadas funções dentro do template
 // obs: atribuição de uma função a uma variável, olha isso:
-const up = texto => texto.toUpperCase()
-console.log(`Ei... ${nome} ${up('cuidado')} !`)
+const up = texto => texto.toUpperCase();
+console.log(`Ei... ${nome} ${up('cuidado')} !`);
 
