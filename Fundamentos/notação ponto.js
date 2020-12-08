@@ -16,7 +16,7 @@ const obj3 = new obj('mesa')
 console.log (obj2.nome)
 console.log(obj3.nome)
 
-console.log(typeof)
+
 
 
 //a notação ponto serve basciamente para acessar membros de um objeto, função etc...
