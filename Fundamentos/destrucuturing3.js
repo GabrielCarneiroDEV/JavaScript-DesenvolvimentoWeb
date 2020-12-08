@@ -1,4 +1,4 @@
-//usando destructuring como parametro de uma função
+//usando destructuring como parametro de uma função 
 
 function rand ({min =0, max = 1000}){
     const valor = Math.random() * (max-min) + min
