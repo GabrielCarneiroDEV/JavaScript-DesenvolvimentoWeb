@@ -1,0 +1,28 @@
+Tabela verdade dos operadores lógicos
+
+
+E  &&
+
+V e V-> V
+V e F-> F
+F e V-> F
+F e F-> F
+
+OU ||
+
+V ou V -> V
+V ou F -> V
+F ou V -> V
+F ou F -> F
+
+OU EXCLUSIVO XOR
+
+V xor V -> F
+V xor F -> V
+F xor V -> V
+F xor F => F
+
+NEGAÇÃO !
+
+!V -> F
+!F -> V
