@@ -12,6 +12,7 @@ window.onload = function(){
 
 var stage = document.getElementById('stage');
 var ctx = stage.getContext ('2d')
+document.addEventListener("keydown", keyPush)
 
 setInterval(game, 60);  
 
@@ -22,8 +23,8 @@ var py = 15;     // ponto y
 var tp = 20;    // tamanho da peça
 var qp = 2;     //quantidade de peças
 var ax = ay =15;//apple x e y
-var tail = []   //calda da cobra
-tail = 5
+var trail = []   //rastro da cobra
+var tail = 5      //calda da cobrinha
 
 
 function game(){
@@ -43,26 +44,65 @@ function game(){
 
     ctx.fillStyle = "black";
     ctx.fillRect(0,0,stage.width, stage.height);
+
     ctx.fillStyle = "red";
     ctx.fillRect(ax*tp, ay*tp, tp,tp);
 
     ctx.fillStyle = "gray";
-    for (let i = 0; i < tail.length; i++){
-        ctx.fillRect(tail[i].x*lp tail[i].y*tp, tp, tp)
-        if (trail[i].x ==px && tail[i].y == py){
-            vx = vy = 0
+    for (var i = 0; i < trail.length; i++){
+        ctx.fillRect(trail[i].x*tp, trail[i].y*tp, tp, tp);
+        if (trail[i].x == px && trail[i].y == py){
+            vx = vy = 0;
 
         }
 
     }
-    
 
+    trail.push({x:px,y:py})
+    while(trail.length > tail){
+        trail.shift();
+    }
+
+    if(ax==px && ay==py){
+        tail++;
+        ax = Math.floor(Math.random()*qp)
+        ay = Math.floor(Math.random()*qp)
+    }
 
 }
 
+function keyPush(event){
 
 
 
+switch (event.keyCode) {
+    case 37:  //37 é a tecla left
+        vx = -vel;
+        vy =0;
+        
+        break;
+
+    case 38:// uo
+        vx = 0;
+        vy = -vel;
+        break;
+
+    case 39: //rigth
+        vx = vel;
+        vy = 0;
+        break;
+
+    case 40: //down
+        vx = 0;
+        vy = vel;
+        break;
+
+    default:
+        break;
+
+        
+}
+}
 
 
 
