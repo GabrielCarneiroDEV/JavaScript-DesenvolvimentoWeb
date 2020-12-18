@@ -19,7 +19,7 @@ const vel = 1;
 var vx = vy = 0; //velocidade x e y
 var px = 10;     // ponto x
 var py = 15;     // ponto y
-var lp = 20;    // tamanho da peça
+var tp = 20;    // tamanho da peça
 var qp = 2;     //quantidade de peças
 var ax = ay =15;//apple x e y
 var tail = []   //calda da cobra
@@ -27,13 +27,32 @@ tail = 5
 
 
 function game(){
+    px += vx;
+    py += vy;
+    if (px<0){
+        px = qp - 1;
+    }if (px > qp - 1){
+        px = 0;
+    }if (py < 0){
+        px = qp-1;
+    } if(py > qp - 1){
+        py = 0;
+    }
 
 
 
     ctx.fillStyle = "black";
-ctx.fillRect(0,0,stage.width, stage.height);
+    ctx.fillRect(0,0,stage.width, stage.height);
+    ctx.fillStyle = "red";
+    ctx.fillRect(ax*tp, ay*tp, tp,tp);
+
+    ctx.fillStyle = "gray";
+    for (let i = 0; i < tail.length; i++){
+        ctx.fillRect(ax*tp, ay*tp, tp, tp)
 
 
+    }
+    
 
 
 }
