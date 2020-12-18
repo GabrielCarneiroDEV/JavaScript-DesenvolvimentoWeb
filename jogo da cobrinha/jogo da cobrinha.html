@@ -14,11 +14,28 @@ var stage = document.getElementById('stage');
 var ctx = stage.getContext ('2d')
 
 setInterval(game, 60);  
+
+const vel = 1;
+var vx = vy = 0; //velocidade x e y
+var px = 10;     // ponto x
+var py = 15;     // ponto y
+var lp = 20;    // tamanho da peça
+var qp = 2;     //quantidade de peças
+var ax = ay =15;//apple x e y
+var tail = []   //calda da cobra
+tail = 5
+
+
 function game(){
 
 
 
-    
+    ctx.fillStyle = "black";
+ctx.fillRect(0,0,stage.width, stage.height);
+
+
+
+
 }
 
 
@@ -28,8 +45,7 @@ function game(){
 
 
 
-ctx.fillStyle = "black";
-ctx.fillRect(0,0,stage.width, stage.height);
+
 
 
 
