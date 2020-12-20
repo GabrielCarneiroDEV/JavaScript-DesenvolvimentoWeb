@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Cobrinha</title>
 </head>
+<style>
+    header{
+        font: black 20pt Arial; 
+    }
+    body{
+background: rgba(63, 63, 172, 0.63);
+text-align: center;
+    }
+    
+</style>
+<header>Jogo da Cobrinha</header>
 <body>
-    <canvas id ="stage" width = "400" height="400"></canvas>
+    <canvas id ="stage" width = "600" height="600"></canvas>
     <script>
 
 window.onload = function(){
@@ -21,7 +32,7 @@ var vx = vy = 0; //velocidade x e y
 var px = 10;     // ponto x
 var py = 15;     // ponto y
 var tp = 20;    // tamanho da peça
-var qp = 20;     //quantidade de peças
+var qp = 30;     //quantidade de peças
 var ax = ay =15; //apple x e y
 var trail = [];  //rastro da cobra
 var tail = 5      //calda da cobrinha
@@ -50,14 +61,15 @@ function game(){
     ctx.fillStyle = "red";
     ctx.fillRect(ax*tp, ay*tp, tp,tp);
 
-    ctx.fillStyle = "gray";
+    ctx.fillStyle = "yellow";
 
     for (var i = 0; i < trail.length; i++){
 
-        ctx.fillRect(trail[i].x * tp, trail[i].y *  tp, tp, tp);
+        ctx.fillRect(trail[i].x * tp, trail[i].y *  tp, tp-0.5, tp-0.5);
 
         if (trail[i].x == px && trail[i].y == py){
             vx = vy = 0;
+            tail =5;
 
         }
 
