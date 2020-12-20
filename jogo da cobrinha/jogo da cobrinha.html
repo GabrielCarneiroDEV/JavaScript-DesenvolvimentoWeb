@@ -16,8 +16,10 @@ text-align: center;
 
     }
     canvas#stage{
-        border-radius: 10%  ;
+        border-radius: 5%  ;
         color: rgb(240, 239, 247);
+        box-shadow: 5px 5px 5px 5px rgba(53, 42, 42, 0.308);
+        margin-top: 50px;
       
 
     }
@@ -74,11 +76,12 @@ function game(){
 
     for (var i = 0; i < trail.length; i++){
 
-        ctx.fillRect(trail[i].x * tp, trail[i].y *  tp, tp-0.5, tp-0.5);
+        ctx.fillRect(trail[i].x * tp, trail[i].y *  tp, tp-0.1, tp-0.1);
 
         if (trail[i].x == px && trail[i].y == py){
             vx = vy = 0;
             tail =5;
+            
 
         }
 
