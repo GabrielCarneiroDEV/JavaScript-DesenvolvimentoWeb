@@ -10,3 +10,4 @@ opcao = getInteiroAleatorioEntre(-1, 5)
 console.log(`valor escolhido ${opcao}`)
 
 }
+
