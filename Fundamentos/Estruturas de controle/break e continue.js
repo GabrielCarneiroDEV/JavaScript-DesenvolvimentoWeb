@@ -22,3 +22,16 @@ for (i in nums){
     }
     console.log(`${i} =  ${nums[i]}`)
 }
+
+
+//o break ou continue sempre age em cima do estrutura de controle mais próximo, para modificar isso se utiliza um rotulo, como no exemplo abaixo, o rotulo utilizado é a palavra "externo"
+externo: for(a in nums){
+    for (b in nums){
+        if(a==2 && b==3){
+             break externo
+            
+        }
+        console.log(`${a} , ${b}`)
+    }
+
+}
